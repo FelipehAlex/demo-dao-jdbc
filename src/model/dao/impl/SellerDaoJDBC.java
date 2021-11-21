@@ -1,7 +1,7 @@
 package model.dao.impl;
 
 import db.DB;
-import db.DbExeption;
+import db.DbException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -50,11 +50,11 @@ public class SellerDaoJDBC implements SellerDao{
                 DB.closeResultSet(rs);
             }
             else {
-                throw new DbExeption("Unexpected error! No rows affected!");
+                throw new DbException("Unexpected error! No rows affected!");
             }
         }
         catch (SQLException e) {
-            throw new DbExeption(e.getMessage());
+            throw new DbException(e.getMessage());
         }
         finally {
             DB.closeStatement(st);
@@ -81,7 +81,7 @@ public class SellerDaoJDBC implements SellerDao{
             st.executeUpdate();
         }
         catch (SQLException e) {
-            throw new DbExeption(e.getMessage());
+            throw new DbException(e.getMessage());
         }
         finally {
             DB.closeStatement(st);
@@ -99,7 +99,7 @@ public class SellerDaoJDBC implements SellerDao{
             st.executeUpdate();
         }
         catch (SQLException e) {
-            throw new DbExeption(e.getMessage());
+            throw new DbException(e.getMessage());
         }
         finally {
             DB.closeStatement(st);
@@ -126,7 +126,7 @@ public class SellerDaoJDBC implements SellerDao{
             return null;
         }
         catch (SQLException e) {
-            throw new DbExeption(e.getMessage());
+            throw new DbException(e.getMessage());
         }
         finally {
             DB.closeStatement(st);
@@ -165,7 +165,7 @@ public class SellerDaoJDBC implements SellerDao{
             return list;
         }
         catch (SQLException e) {
-            throw new DbExeption(e.getMessage());
+            throw new DbException(e.getMessage());
         }
         finally {
             DB.closeStatement(st);
@@ -225,7 +225,7 @@ public class SellerDaoJDBC implements SellerDao{
             return list;
         }
         catch (SQLException e) {
-            throw new DbExeption(e.getMessage());
+            throw new DbException(e.getMessage());
         }
         finally {
             DB.closeStatement(st);
